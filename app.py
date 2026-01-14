@@ -81,20 +81,25 @@ with col2:
  #   recommendations = recommend(selected_movie_name)
     #for i in recommendations:
      #   st.write("👉", i)
-for movie in recommendations:
-    st.markdown(
-        f"""
-        <div style="
-            padding: 12px;
-            margin: 8px 0;
-            border-radius: 10px;
-            background-color: #262730;
-        ">
-            🎬 <b>{movie}</b>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+if st.button("Recommend"):
+    recommendations = recommend(selected_movie_name)
+
+    for movie in recommendations:
+        st.markdown(
+            f"""
+            <div style="
+                background-color:#1f2937;
+                padding:12px;
+                border-radius:10px;
+                margin-bottom:10px;
+                font-size:18px;
+            ">
+                🎥 {movie}
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
 if recommend_btn:
     with st.spinner("🔍 Finding best matches..."):
         recommendations = recommend(selected_movie_name)
