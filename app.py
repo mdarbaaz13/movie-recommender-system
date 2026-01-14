@@ -67,7 +67,7 @@ with col1:
         "🎥 Select a movie",
         movies['title'].values
     )
-    recommend_btn = st.button("✨ Recommend")
+    #recommend_btn = st.button("✨ Recommend")
 
 with col2:
     st.subheader("🍿 Recommended Movies")
@@ -86,16 +86,19 @@ if st.button("Recommend"):
 
     for movie in recommendations:
         st.markdown(
-            f"""
-            <div style="
-                background-color:#1f2937;
-                padding:12px;
-                border-radius:10px;
-                margin-bottom:10px;
-                font-size:18px;
-            ">
-                🎥 {movie}
-            </div>
+            """
+            <style>
+            .movie-card {
+                background: linear-gradient(135deg, #111827, #1f2937);
+                color: #f9fafb;
+                padding: 14px 18px;
+                border-radius: 12px;
+                margin-bottom: 12px;
+                font-size: 18px;
+                font-weight: 500;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            }
+            </style>
             """,
             unsafe_allow_html=True
         )
